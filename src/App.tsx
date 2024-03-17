@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import ExpenceList from './components/ExpenceList';
+import ExpenseFilter from './components/ExpenseFilter';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
+import ExpenseForm from './components/ExpenseForm';
+
+export const categories = ['Groceries', 'Utilities', 'Entertainment'];
 
 function App() {
+  const [selectedCategory, setSelectedCategory] = useState('');
   const [expenses, setExpenses] = useState([
     {
       id: 1,
@@ -30,11 +35,22 @@ function App() {
       category: 'Utilities',
     },
   ]);
+  const visibleExpenses = selectedCategory
+    ? expenses.filter((e) => e.category === selectedCategory)
+    : expenses;
 
   return (
     <div className='container'>
+      <div className='mb-5'>
+        <ExpenseForm />
+      </div>
+      <div className='mb-3'>
+        <ExpenseFilter
+          onSelectCategory={(category) => setSelectedCategory(category)}
+        />
+      </div>
       <ExpenceList
-        expenses={expenses}
+        expenses={visibleExpenses}
         onDelete={(id) => setExpenses(expenses.filter((e) => e.id !== id))}
       />
     </div>

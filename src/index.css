@@ -1,0 +1,11 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  padding: 20px;
+}
+
+.container {
+  max-width: 600px;
+}

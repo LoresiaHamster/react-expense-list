@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import ExpenceList from './components/ExpenceList';
 import ExpenseFilter from './components/ExpenseFilter';
+import ExpenseForm from './components/ExpenseForm';
+import ExpenceList from './components/ExpenceList';
+import categories from './components/categories';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
-import ExpenseForm from './components/ExpenseForm';
-
-export const categories = ['Groceries', 'Utilities', 'Entertainment'];
 
 function App() {
   const [selectedCategory, setSelectedCategory] = useState('');

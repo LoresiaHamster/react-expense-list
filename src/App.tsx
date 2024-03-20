@@ -2,7 +2,6 @@ import { useState } from 'react';
 import ExpenseFilter from './components/ExpenseFilter';
 import ExpenseForm from './components/ExpenseForm';
 import ExpenceList from './components/ExpenceList';
-import categories from './components/categories';
 
 import 'bootstrap/dist/css/bootstrap.min.css';
 
